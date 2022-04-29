@@ -22,13 +22,16 @@ exports.getAllWords = async (req, res) => {
 
 exports.getWord = async (req, res) => {
   try {
-    const word = await Word.findById(req.params.id);
+    // const word = await Word.findById(req.params.id);
     // Word.findOne({ _id: req.params.id })
+    const docs = await Word.find({
+      word: { $regex: req.params.id, $options: 'i' },
+    });
 
     res.status(200).json({
       status: 'success',
       data: {
-        word,
+        docs,
       },
     });
   } catch (err) {
