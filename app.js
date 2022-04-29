@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const wordRouter = require('./routes/wordRoutes');
+const wordPublicRouter = require('./routes/wordPublicRoutes');
 
 const app = express();
 
@@ -33,5 +34,6 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 app.use('/api/v1/words', wordRouter);
+app.use('/api/v1/words-public', wordPublicRouter);
 
 module.exports = app;
