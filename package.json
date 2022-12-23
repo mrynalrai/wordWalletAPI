@@ -2,7 +2,7 @@
   "name": "wordwalletapi",
   "version": "1.0.0",
   "description": "API for WordWallet App",
-  "main": "index.js",
+  "main": "./src/server.js",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
