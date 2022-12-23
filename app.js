@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const serverless = require('serverless-http');
 
 const wordRouter = require('./routes/wordRoutes');
 const wordPublicRouter = require('./routes/wordPublicRoutes');
@@ -33,7 +34,8 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-app.use('/api/v1/words', wordRouter);
-app.use('/api/v1/words-public', wordPublicRouter);
+app.use('/.netlify/functions/api/v1/words', wordRouter);
+app.use('/.netlify/functions/api/v1/words-public', wordPublicRouter);
 
 module.exports = app;
+module.exports.handler = serverless(app);
