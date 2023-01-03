@@ -68,9 +68,11 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(cors());
 
-// app.use(cors({
-//   origin: 'https://www.domainname.com'
-// }))
+app.use(
+  cors({
+    origin: 'https://wordwallet-private.netlify.app/',
+  })
+);
 
 app.options('*', cors());
 
