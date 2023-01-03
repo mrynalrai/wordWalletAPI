@@ -71,15 +71,16 @@ app.use(cors());
 app.use(
   cors({
     credentials: true,
-    origin: 'https://wordwallet-private.netlify.app/',
+    origin: true,
   })
 );
 
+// https://stackoverflow.com/questions/52942286/comparing-implementing-app-usecorscorsoptions-and-app-options-cors
 app.options(
   '*',
   cors({
     credentials: true,
-    origin: 'https://wordwallet-private.netlify.app/',
+    origin: true,
   })
 );
 
