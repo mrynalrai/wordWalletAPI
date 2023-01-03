@@ -4,13 +4,22 @@
   "description": "API for WordWallet App",
   "main": "./src/server.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.9.19",
     "morgan": "^1.9.1",
     "netlify-lambda": "^2.0.15",
-    "serverless-http": "^3.1.0"
+    "nodemailer": "^6.8.0",
+    "serverless-http": "^3.1.0",
+    "validator": "^13.7.0",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
     "eslint": "^7.3.0",
@@ -26,7 +35,7 @@
   "scripts": {
     "start": "netlify-lambda serve src",
     "build": "netlify-lambda build src",
-    "dev": "nodemon server.js",
+    "dev": "nodemon src/api.js",
     "start:prod": "netlify-lambda serve src"
   },
   "repository": {

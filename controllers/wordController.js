@@ -2,7 +2,9 @@ const Word = require('./../models/wordModel');
 
 exports.getAllWords = async (req, res) => {
   try {
-    const words = await Word.find();
+    let filter = {};
+    if (req.user.id) filter = { user: req.user.id };
+    const words = await Word.find(filter);
 
     // SEND RESPONSE
     res.status(200).json({
@@ -21,10 +23,12 @@ exports.getAllWords = async (req, res) => {
 };
 
 exports.getWord = async (req, res) => {
+  console.log('getWord: ' + req.params.id);
   try {
     // const word = await Word.findById(req.params.id);
     // Word.findOne({ _id: req.params.id })
     const docs = await Word.find({
+      user: req.user.id,
       word: { $regex: req.params.id, $options: 'i' },
     });
 
@@ -46,6 +50,7 @@ exports.createWord = async (req, res) => {
   try {
     // const newWord = new Word({})
     // newWord.save()
+    if (!req.body.user) req.body.user = req.user.id; // id coming from protect middleware
 
     const newWord = await Word.create(req.body);
     //console.log(newWord);
