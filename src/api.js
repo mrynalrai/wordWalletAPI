@@ -70,6 +70,7 @@ app.use(cors());
 
 app.use(
   cors({
+    credentials: true,
     origin: 'https://wordwallet-private.netlify.app/',
   })
 );
