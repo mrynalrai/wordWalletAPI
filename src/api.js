@@ -75,12 +75,12 @@ app.use(
   })
 );
 
-app.options(
-  '*',
-  cors({
-    origin: 'https://wordwallet-private.netlify.app/',
-  })
-);
+// app.options(
+//   '*',
+//   cors({
+//     origin: 'https://wordwallet-private.netlify.app/',
+//   })
+// );
 
 // Limit requests from same API
 // const limiter = rateLimit({
