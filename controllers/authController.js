@@ -74,7 +74,11 @@ exports.logout = (req, res) => {
   //   sameSite: 'none',
   //   secure: true,
   // });
-  res.clearCookie('jwt');
+  res.clearCookie('jwt', {
+    httpOnly: true,
+    sameSite: 'none',
+    secure: true,
+  });
   res.status(200).json({ status: 'success' });
 };
 
