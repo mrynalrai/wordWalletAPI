@@ -66,23 +66,17 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-app.use(cors());
+// app.use(cors());
 
-// app.use(
-//   cors({
-//     // credentials: true,
-//     // origin: 'https://wordwallet-private.netlify.app/',
-//   })
-// );
+app.use(
+  cors({
+    credentials: true,
+    origin: 'https://wordwallet-private.netlify.app/',
+  })
+);
 
-// // https://stackoverflow.com/questions/52942286/comparing-implementing-app-usecorscorsoptions-and-app-options-cors
-// app.options(
-//   '*',
-//   cors({
-//     credentials: true,
-//     origin: 'https://wordwallet-private.netlify.app/',
-//   })
-// );
+// https://stackoverflow.com/questions/52942286/comparing-implementing-app-usecorscorsoptions-and-app-options-cors
+app.options('*', cors());
 
 // Limit requests from same API
 // const limiter = rateLimit({
