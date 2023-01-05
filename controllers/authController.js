@@ -78,8 +78,6 @@ exports.logout = (req, res) => {
     httpOnly: true,
     sameSite: 'none',
     secure: true,
-    domain: 'wordwallet-api.netlify.app',
-    path: '/',
   });
   res.status(200).json({ status: 'success' });
 };
