@@ -60,6 +60,23 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getUserDetails = catchAsync(async (req, res, next) => {
+  let query = User.findById(req.user);
+  const doc = await query;
+
+  if (!doc) {
+    return next(new AppError('No document found with that ID', 404));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      name: doc.name,
+      email: doc.email,
+    },
+  });
+});
+
 exports.getUser = (req, res) => {
   res.status(500).json({
     status: 'error',

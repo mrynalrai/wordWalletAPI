@@ -21,6 +21,14 @@ router.patch('/updateMe', authController.protect, userController.updateMe);
 router.delete('/deleteMe', authController.protect, userController.deleteMe);
 
 router
+  .route('/details')
+  .get(
+    authController.protect,
+    authController.restrictTo('user', 'admin'),
+    userController.getUserDetails
+  );
+
+router
   .route('/')
   .get(
     authController.protect,
