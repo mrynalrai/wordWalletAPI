@@ -73,7 +73,7 @@ app.use(
   cors({
     credentials: true,
     // origin: 'https://wordwallet-private.netlify.app',
-    origin: 'https://mrinalrai.in/',
+    origin: 'https://mrinalrai.in',
   })
 );
 
