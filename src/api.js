@@ -72,7 +72,8 @@ if (process.env.NODE_ENV === 'development') {
 app.use(
   cors({
     credentials: true,
-    origin: 'https://wordwallet-private.netlify.app',
+    // origin: 'https://wordwallet-private.netlify.app',
+    origin: 'https://mrinalrai.in/',
   })
 );
 
