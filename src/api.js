@@ -1,3 +1,4 @@
+const path = require('path');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const express = require('express');
@@ -52,6 +53,9 @@ process.on('unhandledRejection', (err) => {
 });
 
 const app = express();
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, './views'));
 
 // const port = process.env.PORT || 3000;
 // app.listen(port, () => {

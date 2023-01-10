@@ -37,7 +37,8 @@
     "start": "netlify-lambda serve src",
     "build": "netlify-lambda build src",
     "dev": "nodemon src/api.js",
-    "start:prod": "netlify-lambda serve src"
+    "start:prod": "netlify-lambda serve src",
+    "debug": "set NODE_OPTIONS=--inspect && netlify functions:serve"
   },
   "repository": {
     "type": "git",
