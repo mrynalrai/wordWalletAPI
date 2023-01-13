@@ -46,17 +46,19 @@ module.exports = class Email {
     if (template == 'passwordReset') {
       message = `Hi ${this.firstName},
 
-      Forgot your password?\n 
-      Do not worry. Please click link below to reset your password: \n${this.url}\n.\n
-      If you didn't forget your password, please ignore this email!\n\n
-      - WordWallet`;
+      Forgot your password?
+      Do not worry. Please click link below to reset your password: 
+      ${this.url}
+      If you didn't forget your password, please ignore this email!
+      
+      - Team WordWallet`;
     } else if (template == 'welcome') {
       message = `Hi ${this.firstName},
 
-      Welcome to WordWallet, we're glad to have you \n\n
+      Welcome to WordWallet, we're glad to have you.
       
-      Please feel free to explore the app and provide your feedback.\n
-      If you need any help, please don't hesitate to contact me!\n\n
+      Please feel free to explore the app and provide your feedback.
+      If you need any help, please don't hesitate to contact me!\n
       
       - Mrinal Rai, Developer`;
     }

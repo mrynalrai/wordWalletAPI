@@ -9,7 +9,6 @@ const serverless = require('serverless-http');
 const AppError = require('../utils/appError');
 const globalErrorHandler = require('../controllers/errorController');
 const wordRouter = require('../routes/wordRoutes');
-const wordPublicRouter = require('../routes/wordPublicRoutes');
 const userRouter = require('../routes/userRoutes');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -128,7 +127,6 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 app.use('/.netlify/functions/api/v1/words', wordRouter);
-app.use('/.netlify/functions/api/v1/words-public', wordPublicRouter);
 app.use('/.netlify/functions/api/v1/users', userRouter);
 
 app.all('*', (req, res, next) => {
