@@ -44,11 +44,12 @@ module.exports = class Email {
     // 2) Define email options
     let message;
     if (template == 'passwordReset') {
-      message = `Hi ${this.firstName},
-
-      Forgot your password?
-      Do not worry. Please click link below to reset your password: 
+      message = `Forgot you password?
+ 
+      We have received your password change request. Please click link below to reset your password: 
       ${this.url}
+
+      Please note your password reset token (valid for only 10 minutes)
       If you didn't forget your password, please ignore this email!
       
       - Team WordWallet`;
@@ -79,9 +80,6 @@ module.exports = class Email {
   }
 
   async sendPasswordReset() {
-    await this.send(
-      'passwordReset',
-      'Your password reset token (valid for only 10 minutes)'
-    );
+    await this.send('passwordReset', 'Reset Your Password');
   }
 };
