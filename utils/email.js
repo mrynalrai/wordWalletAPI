@@ -7,7 +7,7 @@ module.exports = class Email {
     this.to = user.email;
     this.firstName = user.name.split(' ')[0];
     this.url = url;
-    this.from = `Mrinal Rai <${process.env.EMAIL_FROM}>`;
+    this.from = `Team WordWallet <${process.env.EMAIL_FROM}>`;
   }
 
   newTransport() {
@@ -61,7 +61,7 @@ module.exports = class Email {
       Please feel free to explore the app and provide your feedback.
       If you need any help, please don't hesitate to contact me!\n
       
-      - Mrinal Rai, Developer`;
+      - Team WordWallet`;
     }
     const mailOptions = {
       from: this.from,
