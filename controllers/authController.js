@@ -159,10 +159,11 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
   // 3) Send it to user's email
   try {
-    const resetURL = `${req.protocol}://${req.get(
-      'host'
-    )}/.netlify/functions/api/v1/users/resetPassword/${resetToken}`;
-    console.log(resetURL);
+    // const resetURL = `${req.protocol}://${req.get(
+    //   'host'
+    // )}/.netlify/functions/api/v1/users/resetPassword/${resetToken}`;
+    const resetURL = `https://mywordwallet.com/?${resetToken}`;
+    // console.log(resetURL);
     await new Email(user, resetURL).sendPasswordReset();
 
     res.status(200).json({
