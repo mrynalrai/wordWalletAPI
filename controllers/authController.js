@@ -162,7 +162,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     // const resetURL = `${req.protocol}://${req.get(
     //   'host'
     // )}/.netlify/functions/api/v1/users/resetPassword/${resetToken}`;
-    const resetURL = `https://mywordwallet.com/?${resetToken}`;
+    const resetURL = `https://mywordwallet.com/?resetToken=${resetToken}`;
     // console.log(resetURL);
     await new Email(user, resetURL).sendPasswordReset();
 
