@@ -49,7 +49,7 @@ module.exports = class Email {
       We have received your password change request. Please click link below to reset your password: 
       ${this.url}
 
-      Please note your password reset token (valid for only 10 minutes)
+      Please note your password reset token is valid for only 10 minutes.
       If you didn't forget your password, please ignore this email!
       
       - Team WordWallet`;
