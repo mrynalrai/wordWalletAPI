@@ -56,7 +56,7 @@ module.exports = class Email {
       html = `
       <b>Forgot you password?</b>
       <p>We have received your password change request. Please click link below to reset your password: </p>
-      <a href="${this.url}" />
+      <a href="${this.url}" target="_blank">
       ${this.url}
       </a>
       <br>
@@ -79,7 +79,7 @@ module.exports = class Email {
       <p>Welcome to <b>WordWallet</b>, we're glad to have you with us.</p>
       <p>Please feel free to explore the app and provide your feedback.</p>
       <p>If you need any support, please send your queries to this email address:
-      <a href = "mailto:  mywordwallet@gmail.com"> mywordwallet@gmail.com</a>
+      <a href = "mailto:mywordwallet@gmail.com"> mywordwallet@gmail.com</a>
       </p>
       <br>
       <p>Team WordWallet.</p>
