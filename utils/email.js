@@ -42,7 +42,7 @@ module.exports = class Email {
     // });
     // console.log(html);
     // 2) Define email options
-    let message;
+    let message, html;
     if (template == 'passwordReset') {
       message = `Forgot you password?
  
@@ -53,21 +53,43 @@ module.exports = class Email {
       If you didn't forget your password, please ignore this email!
       
       - Team WordWallet`;
+      html = `
+      <b>Forgot you password?</b>
+      <p>We have received your password change request. Please click link below to reset your password: </p>
+      <a href="${this.url}" />
+      ${this.url}
+      </a>
+      <br>
+      <p>Please note your password reset token is valid for only 10 minutes.<p>
+      <p>If you didn't forget your password, please ignore this email.<p>
+      <br>
+      <p>Team WordWallet.</p>
+      `;
     } else if (template == 'welcome') {
       message = `Hi ${this.firstName},
 
-      Welcome to WordWallet, we're glad to have you.
-      
+      Welcome to WordWallet, we're glad to have you with us.
       Please feel free to explore the app and provide your feedback.
-      If you need any help, please don't hesitate to contact me!\n
+      
+      If you need any support, please send your queries to this email address: mywordwallet@gmail.com
       
       - Team WordWallet`;
+      html = `
+      <p>Hi ${this.firstName},</p>
+      <p>Welcome to <b>WordWallet</b>, we're glad to have you with us.</p>
+      <p>Please feel free to explore the app and provide your feedback.</p>
+      <p>If you need any support, please send your queries to this email address:
+      <a href = "mailto:  mywordwallet@gmail.com"> mywordwallet@gmail.com</a>
+      </p>
+      <br>
+      <p>Team WordWallet.</p>
+      `;
     }
     const mailOptions = {
       from: this.from,
       to: this.to,
       subject,
-      // html,
+      html,
       text: message,
     };
 
