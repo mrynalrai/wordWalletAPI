@@ -54,8 +54,8 @@ module.exports = class Email {
       
       - Team WordWallet`;
       html = `
-      <b>Forgot you password?</b>
-      <p>We have received your password change request. Please click link below to reset your password: </p>
+      <b>Forgot your password?</b>
+      <p>We have received your password change request. Please click the link below to reset your password: </p>
       <a href="${this.url}" target="_blank">
       ${this.url}
       </a>
