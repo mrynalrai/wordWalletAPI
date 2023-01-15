@@ -14,7 +14,6 @@ const wordSchema = new mongoose.Schema(
     word: {
       type: String,
       required: [true, 'A word must have a name'],
-      unique: true,
     },
     meaning: {
       type: String,
